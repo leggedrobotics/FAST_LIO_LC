@@ -1,6 +1,6 @@
 common:
     lid_topic:  "/velodyne_points"
-    imu_topic:  "/imu/data"
+    imu_topic:  "/sensors/imu"
     keyFrame_topic: "/aft_pgo_path"
     keyFrame_id_topic: "/key_frames_ids"
     time_sync_en: true         # ONLY turn on when external time synchronization is really not possible
@@ -17,10 +17,11 @@ mapping:
     b_gyr_cov: 0.0001
     fov_degree:    180
     det_range:     100.0
-    extrinsic_T: [ 0, 0, 0.28]
-    extrinsic_R: [ 1, 0, 0, 
-                   0, 1, 0, 
-                   0, 0, 1]
+    extrinsic_T: [ -0.009, 0.612, 0.099]
+    extrinsic_R: [ -0.9999820,  0.0000180, -0.0059999,
+                    0.0000180, -0.9999820, -0.0059999,
+                    -0.0059999, -0.0059999,  0.9999640 ]
+
 
 publish:     
     scan_publish_en:  true       # 'false' will close all the point cloud output
